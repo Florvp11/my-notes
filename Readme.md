@@ -18,3 +18,7 @@ In the Frontend folder create a .env file with:
 
 ## Running the app
 Execute the script ./start.sh
+
+## Deployed version
+App deployed in https://my-notes-1-qh5o.onrender.com/
+
