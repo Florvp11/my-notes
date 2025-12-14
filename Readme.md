@@ -13,5 +13,8 @@
 In the Backend folder create a .env file with:
 - DATABASE_URL=file:./dev.db
 
+In the Frontend folder create a .env file with:
+- VITE_API_URL=http://localhost:3000/api
+
 ## Running the app
 Execute the script ./start.sh
