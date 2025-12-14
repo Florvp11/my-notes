@@ -1,9 +1,9 @@
-import { API_URL } from "./config";
+import API_URL from "./config";
 class NotesService {
   async createNote(data) {
     const { title, content } = data;
     try {
-      const res = await fetch(`${API_URL}/notes/create`, {
+      const res = await fetch(`${API_URL.URL_API}/notes/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -20,7 +20,7 @@ class NotesService {
 
   async deleteNote(note_id) {
     try {
-      const res = await fetch(`${API_URL}/notes/${note_id}`, {
+      const res = await fetch(`${API_URL.URL_API}/notes/${note_id}`, {
         method: "DELETE",
       });
       return res.json();
@@ -31,7 +31,7 @@ class NotesService {
   }
   async getActivedNotes() {
     try {
-      const res = await fetch(`${API_URL}/notes`, {
+      const res = await fetch(`${API_URL.URL_API}/notes`, {
         method: "GET",
       });
       const data = res.json();
@@ -43,7 +43,7 @@ class NotesService {
   }
   async getArchivedNotes() {
     try {
-      const res = await fetch(`${API_URL}/notes/archived`, {
+      const res = await fetch(`${API_URL.URL_API}/notes/archived`, {
         method: "GET",
       });
       const data = res.json();
@@ -56,7 +56,7 @@ class NotesService {
 
   async getNoteById(note_id) {
     try {
-      const res = await fetch(`${API_URL}/notes/${note_id}`, {
+      const res = await fetch(`${API_URL.URL_API}/notes/${note_id}`, {
         method: "GET",
       });
       const data = res.json();
@@ -68,7 +68,7 @@ class NotesService {
   }
   async archiveNote(note_id) {
     try {
-      const res = await fetch(`${API_URL}/notes/${note_id}/archive`, {
+      const res = await fetch(`${API_URL.URL_API}/notes/${note_id}/archive`, {
         method: "PATCH",
       });
       return res.json();
@@ -80,7 +80,7 @@ class NotesService {
   async unarchiveNote(note_id) {
     try {
       const res = await fetch(
-        `${API_URL}/notes/archived/${note_id}/unarchive`,
+        `${API_URL.URL_API}/notes/archived/${note_id}/unarchive`,
         {
           method: "PATCH",
         }
@@ -93,7 +93,7 @@ class NotesService {
   }
   async updateNote(note_id, data) {
     try {
-      const res = await fetch(`${API_URL}/notes/${note_id}`, {
+      const res = await fetch(`${API_URL.URL_API}/notes/${note_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -107,11 +107,14 @@ class NotesService {
 
   async removeCategoryFromNote(note_id, category_id) {
     try {
-      const res = await fetch(`${API_URL}/notes/${note_id}/categories`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ category_id: category_id }),
-      });
+      const res = await fetch(
+        `${API_URL.URL_API}/notes/${note_id}/categories`,
+        {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ category_id: category_id }),
+        }
+      );
       return res.json();
     } catch (error) {
       console.error("Error al quitar categoría de la nota:", error);
@@ -120,7 +123,7 @@ class NotesService {
   }
 
   async addCategoryToNote(note_id, category_id) {
-    return fetch(`http://localhost:3000/api/notes/${note_id}/categories`, {
+    return fetch(`${API_URL.URL_API}/notes/${note_id}/categories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ category_id: category_id }),
@@ -129,9 +132,12 @@ class NotesService {
 
   async getNotesByCategory(category_id) {
     try {
-      const res = await fetch(`${API_URL}/notes/category/${category_id}`, {
-        method: "GET",
-      });
+      const res = await fetch(
+        `${API_URL.URL_API}/notes/category/${category_id}`,
+        {
+          method: "GET",
+        }
+      );
       return res.json();
     } catch (error) {
       console.error("Error al filtrar notas por categoría:", error);

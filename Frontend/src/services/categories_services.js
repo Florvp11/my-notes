@@ -1,9 +1,9 @@
-import { API_URL } from "./config";
+import API_URL from "./config";
 
 class CategoriesService {
   async createCategory(data) {
     try {
-      const res = await fetch(`${API_URL}/categories/create`, {
+      const res = await fetch(`${API_URL.URL_API}/categories/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -17,7 +17,7 @@ class CategoriesService {
 
   async deleteCategory(category_id) {
     try {
-      const res = await fetch(`${API_URL}/categories/${category_id}`, {
+      const res = await fetch(`${API_URL.URL_API}/categories/${category_id}`, {
         method: "DELETE",
       });
 
@@ -33,7 +33,7 @@ class CategoriesService {
 
   async getAllCategories() {
     try {
-      const res = await fetch(`${API_URL}/categories`, {
+      const res = await fetch(`${API_URL.URL_API}/categories`, {
         method: "GET",
       });
       const data = res.json();
