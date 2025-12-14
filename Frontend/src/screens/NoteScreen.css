@@ -1,0 +1,128 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(1);
+  }
+}
+
+.note-detail {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 550px;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.75rem 2rem rgba(255, 105, 180, 0.15);
+  animation: fadeIn 0.5s ease;
+  border: 0.15rem solid #ffb7d9;
+}
+
+.note-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-main h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c2187b;
+}
+
+.note-main p {
+  line-height: 1.6;
+  background: #fff7fb;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 1rem rgba(255, 105, 180, 0.1);
+  border: 0.1rem solid #ffd2e9;
+}
+
+.note-main input,
+.note-main textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  border: 0.15rem solid #ffb7d9;
+  font-size: 1rem;
+  background: #fff0f8;
+  color: #a00063;
+}
+
+.note-main input:focus,
+.note-main textarea:focus {
+  outline: none;
+  border-color: #ff66b7;
+  box-shadow: 0 0 0.5rem rgba(255, 105, 180, 0.4);
+}
+
+.note-main textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+.button-notes {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  background: #ff8ec7;
+  color: white;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: 0.2s;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 0.3rem 0.6rem rgba(255, 105, 180, 0.3);
+}
+.edit-btns {
+  padding: 1rem;
+}
+.edit-btn {
+  margin: 1rem 0rem;
+}
+.button-notes:hover {
+  background: #ff6bb3;
+  transform: translateY(-0.15rem);
+}
+.assigned-cat-btn button:active {
+  transform: translateY(0);
+}
+
+.tags {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.assigned-cat-btn {
+  background: #ffd4ec;
+  color: #a00063;
+  border-radius: 1rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: 0.1rem solid #ffb5df;
+}
+
+.assigned-cat-btn:hover {
+  background: #ffb5df;
+}
+
+.note-detail > div:last-child button {
+  width: 10rem;
+}
+
+.note-detail > div:last-child > div button {
+  color: #b40072;
+  margin-top: 0.4rem;
+}

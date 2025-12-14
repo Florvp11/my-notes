@@ -1,0 +1,55 @@
+.categories-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.create-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.create-box input {
+  flex: 1;
+  padding: 8px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+}
+
+.category-item {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background: #ff6bb3;
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-btn {
+  background-color: #ff6bb3;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.create-btn :hover {
+  background-color: #ad4678;
+}
